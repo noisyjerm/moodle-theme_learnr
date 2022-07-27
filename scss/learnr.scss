@@ -712,3 +712,58 @@ ul.teacherscourseview {
         font-size: inherit;
     }
 }
+
+@include media-breakpoint-up(md) {
+    .pagelayout-standard,
+    body.limitedwidth {
+        #page.drawers.learnr-fullwidth {
+            .main-inner {
+                max-width: 100%;
+            }
+
+            .footer-popover {
+                max-width: 100%;
+            }
+        }
+        #page.drawers.learnr-narrowwidth {
+            .main-inner {
+                max-width: 830px;
+            }
+
+            .footer-popover {
+                max-width: 830px;
+            }
+        }
+    }
+
+}
+
+.learnr-fullwidth {
+    #usertogglewidth::before {
+        content: '\f066';
+    }
+    .path-admin.path-admin-tool-lp {
+        .header-maxwidth,
+        .secondary-navigation {
+            max-width: 100%;
+        }
+    }
+    .secondary-navigation {
+        max-width: 100%;
+    }
+}
+
+.learnr-narrowwidth {
+    #usertogglewidth::before {
+        content: '\f065';
+    }
+    .path-admin.path-admin-tool-lp {
+        .header-maxwidth,
+        .secondary-navigation {
+            max-width: 830px;
+        }
+    }
+    .secondary-navigation {
+        max-width: 830px;
+    }
+}

@@ -135,6 +135,15 @@ $regionmainsettingsmenu = $buildregionmainsettings ? $OUTPUT->region_main_settin
 $header = $this->page->activityheader;
 $headercontent = $header->export_for_template($renderer);
 
+$fullwidthclass = '';
+if (get_config('theme_learnr', 'userchoicefullwidth')) {
+    if (get_user_preferences('theme_learnr_fullwidth') === "1") {
+        $fullwidthclass = 'learnr-fullwidth';
+    } else {
+        $fullwidthclass = 'learnr-narrowwidth';
+    }
+}
+
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
@@ -168,6 +177,7 @@ $templatecontext = [
     'footercregion' => $footercregion,
     'hasfooterblocks' => $hasfooterblocks,
     'displayfooterblocks' => $displayfooterblocks,
+    'fullwidth' => $fullwidthclass,
 ];
 
 echo $OUTPUT->render_from_template('theme_learnr/course', $templatecontext);

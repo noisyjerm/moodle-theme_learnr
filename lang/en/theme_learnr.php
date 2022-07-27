@@ -70,6 +70,9 @@ $string['sections-boost'] = 'Boost Default';
 $string['sections-learnr'] = 'LearnR Default Style';
 $string['sections-boxed'] = 'Boxed Style';
 $string['sections-bars'] = 'Solid Section Bars Style';
+$string['userchoicefullwidth'] = 'User Controls Width';
+$string['userchoicefullwidth_desc'] = 'The user can toggle the content between full width or default Boost narrow width.
+                                       Enabling this setting overrides "Full Width Display"';
 $string['fullwidthpage'] = 'Full Width Page Display';
 $string['fullwidthpage_desc'] = 'Make the pages full width for consistency throughout the course.  Turning this off reverts back to standard Boost narrow page widths.';
 $string['showfooterblocks'] = 'Show Footer Block Area';

@@ -187,6 +187,13 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    $name = 'theme_learnr/userchoicefullwidth';
+    $title = get_string('userchoicefullwidth', 'theme_learnr');
+    $description = get_string('userchoicefullwidth_desc', 'theme_learnr');
+    $default = '1';
+    $setting = new admin_setting_configcheckbox($name, $title, $description, $default);
+    $page->add($setting);
+
     $name = 'theme_learnr/fullwidthpage';
     $title = get_string('fullwidthpage', 'theme_learnr');
     $description = get_string('fullwidthpage_desc', 'theme_learnr');

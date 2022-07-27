@@ -257,3 +257,36 @@ function theme_learnr_course_trim_char($str, $n = 500, $endchar = '&#8230;') {
     $out = $small.$endchar;
     return $out;
 }
+
+/**
+ * Adds in content next to the user menu
+ * @return string
+ * @throws dml_exception
+ */
+function theme_learnr_render_navbar_output() {
+    global $OUTPUT;
+    $allowusertochoose = get_config('theme_learnr', 'userchoicefullwidth');
+    if ($allowusertochoose === "1") {
+        return "<span class='nav-link'><i style='color:white;' id='usertogglewidth' class='fa'></i></span>";
+    }
+}
+
+/**
+ * Describes user preferences for this theme.
+ * @return array
+ */
+function theme_learnr_user_preferences() {
+    $preferences = array();
+    $preferences['theme_learnr_fullwidth'] = array(
+        'type' => PARAM_BOOL,
+        'null' => NULL_ALLOWED,
+        'default' => true,
+        'choices' => array(false, true),
+        'permissioncallback' => function($user, $preferencename) {
+            global $USER;
+            return $user->id == $USER->id;
+        }
+    );
+
+    return $preferences;
+}
